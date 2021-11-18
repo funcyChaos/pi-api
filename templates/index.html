@@ -7,10 +7,18 @@
 
 	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 
-	<title>Hello World!</title>
+	<title>pi-api</title>
 </head>
 <body>
-	<h1>index page</h1>
-	<p>just seeing if this is getting updated</p>
+	<div class="grid-container">
+		<div class="header">
+			<h1>led turned on somewhere</h1>
+		</div>
+
+		<div class="center">
+			<a href="/led/on">ON</a>
+			<a href="/led/off">OFF</a>
+		</div>
+	</div>
 </body>
 </html>
