@@ -37,7 +37,7 @@
 	grid-area: center;
 
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 
 	padding: 1rem;
 }
