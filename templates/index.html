@@ -16,9 +16,12 @@
 		</div>
 
 		<div class="center">
-			<a href="/led/on">ON</a>
-			<a href="/led/off">OFF</a>
+			<!-- <a id="ledOn" href="">ON</a> -->
+			<button onclick="ledActuate('on')">ON</button>
+			<button onclick="ledActuate('off')">OFF</button>
 		</div>
 	</div>
+
+	<script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>
