@@ -27,11 +27,8 @@ def actuate(state):
 		gpio.output(18,gpio.HIGH)
 	if state == 'off':
 		gpio.output(18,gpio.LOW)
-	return render_template('index.html')
+	return('',204)
 
 @app.route("/hello")
 def hello():
 	return "<h1>Hello from my rasberry pi!</h1><p>Let's Gooo!</P>"
-
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=80, debug=True)
