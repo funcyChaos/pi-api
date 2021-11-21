@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from markupsafe import escape
+
+import sqlite3
+
+import RPi.GPIO as gpio
+import time
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-import RPi.GPIO as gpio
-import time
 gpio.setmode(gpio.BCM)
 gpio.setwarnings(False)
 gpio.setup(18, gpio.OUT)
@@ -17,10 +20,6 @@ def index():
 	gpio.output(18,gpio.LOW)
 	return render_template('index.html')
 
-@app.route("/escape/<var>")
-def passVariable(var):
-	return f'you passed: {escape(var)}'
-
 @app.route("/led/<state>")
 def actuate(state):
 	if state == 'on':
@@ -29,6 +28,9 @@ def actuate(state):
 		gpio.output(18,gpio.LOW)
 	return('',204)
 
-@app.route("/hello")
-def hello():
-	return "<h1>Hello from my rasberry pi!</h1><p>Let's Gooo!</P>"
+@app.route('/db')
+def dbRead():
+	connection = sqlite3.connect('pi-api.db')
+	cursor = connection.cursor()
+	read = cursor.execute('SELECT username FROM users').fetchall()
+	return jsonify(username=read)
