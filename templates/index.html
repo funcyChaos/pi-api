@@ -7,21 +7,32 @@
 
 	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 
+	<!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+
 	<title>pi-api</title>
 </head>
 <body>
 	<div class="grid-container">
+		<div class="rHeader">
+			<h1 id="username">username</h1>
+		</div>
+
 		<div class="header">
-			<h1>led turned on somewhere</h1>
+			<h1>&ltmi-pi-api&gt</h1>
 		</div>
 
 		<div class="center">
-			<!-- <a id="ledOn" href="">ON</a> -->
-			<button onclick="ledActuate('on')">ON</button>
-			<button onclick="ledActuate('off')">OFF</button>
+			<button class="ledButtons" onclick="ledActuate('on')">ON</button>
+			<button class="ledButtons" onclick="ledActuate('off')">OFF</button>
+		</div>
+
+		<div class="footer">
+
 		</div>
 	</div>
 
 	<script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+	<!-- <script src="../static/js/script.js"></script> -->
 </body>
 </html>
