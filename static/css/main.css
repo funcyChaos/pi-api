@@ -10,13 +10,21 @@
 	gap: 5px;
 
 	grid-template-areas: 
-		"header header header"
+		"lHeader header rHeader"
 		"lSide center rSide"
 		"footer footer footer"
 	;
 
 	height: 100vh;
 	width: 100vw;
+}
+
+.rHeader{
+	grid-area: rHeader;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .header{
@@ -28,9 +36,11 @@
 
 	margin: 5px;
 
-	color: #f05;
+	color: #f06;
 	background-color: #555;
-	border-radius: .2rem;
+	border-radius: .5rem;
+
+	text-shadow: black 2px 2px 3px;
 }
 
 .center{
@@ -38,10 +48,30 @@
 
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
 
 	padding: 1rem;
 }
 
-a{
-	color: black;
+.footer{
+	grid-area: footer;
+
+	margin: 5px;
+
+	border-radius: .5rem;
+
+	background-color: #555;
+}
+
+.ledButtons{
+	width: 5rem;
+	border-radius: 1rem;
+	padding: 1rem;
+
+	font-size: 1rem;
+	font-weight: bold;
+
+	background-color: white;
+
+	box-shadow: black 2px 2px 3px;
 }
