@@ -21,17 +21,39 @@
 
 .rHeader{
 	grid-area: rHeader;
-
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.username{
+	display: none;
+}
+
+@media (max-width: 400px){
+	.grid-container{
+		grid-template-areas:
+			"header header header"
+			"center center center"
+			"footer footer footer"
+		;
+	}
+
+	.rHeader{
+		display: none;
+	}
+
+	.username{
+		display: block;
+	}
 }
 
 .header{
 	grid-area: header;
 
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 
 	margin: 5px;
@@ -58,6 +80,10 @@
 
 	margin: 5px;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	border-radius: .5rem;
 
 	background-color: #555;
@@ -74,4 +100,8 @@
 	background-color: white;
 
 	box-shadow: black 2px 2px 3px;
+}
+
+.fas{
+	color: black;
 }
