@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+	<!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+
+	<title>pi-api</title>
+</head>
+<body>
+	<div class="grid-container">
+		<div class="rHeader">
+			<h1 id="username">username</h1>
+		</div>
+
+		<div class="header">
+			<h1>&ltmi-pi-api&gt</h1>
+		</div>
+
+		<div class="center">
+			<form onSubmit="addUser()">
+				<label for="username-box">username:</label>
+				<input id="username-box" type="username">
+				<label for="password-box">password</label>
+				<input id="password-box" type="password">
+				<button type="submit">submit</button>
+			</form>
+
+			<ul id="userList">
+
+			</ul>
+		</div>
+
+		<div class="footer">
+
+		</div>
+	</div>
+
+	<script src="{{url_for('static', filename='js/userList.js')}}"></script>
+	<script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+	<!-- <script src="../static/js/script.js"></script> -->
+</body>
+</html>
