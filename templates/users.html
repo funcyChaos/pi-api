@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="center">
-			<form onSubmit="addUser()">
+			<form onsubmit="addUser(event)">
 				<label for="username-box">username:</label>
 				<input id="username-box" type="username">
 				<label for="password-box">password</label>
@@ -43,6 +43,7 @@
 	<script src="{{url_for('static', filename='js/userList.js')}}"></script>
 	<script src="{{url_for('static', filename='js/script.js')}}"></script>
 
+	<!-- <script src="../static/js/userList.js"></script> -->
 	<!-- <script src="../static/js/script.js"></script> -->
 </body>
 </html>
