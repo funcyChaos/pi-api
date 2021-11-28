@@ -1,2 +1,4 @@
 sudo nano /etc/dhcpcd.conf
 sudo systemctl status nginx
+
+Note to test push
